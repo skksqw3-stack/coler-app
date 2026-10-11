@@ -20,8 +20,10 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+        with:
+          gradle-version: 8.5
 
       - name: Show repo structure
         run: |
@@ -37,9 +39,6 @@ jobs:
           echo "===== settings.gradle ====="
           cat settings.gradle || echo "no settings.gradle"
 
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v3
-
       - name: Generate Gradle wrapper
         run: gradle wrapper --gradle-version 8.5
 
@@ -47,7 +46,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build APK (debug)
-        run: ./gradlew assembleDebug --stacktrace
+        run: ./gradlew assembleDebug --stacktrace --no-daemon
         continue-on-error: true
 
       - name: Show build output
