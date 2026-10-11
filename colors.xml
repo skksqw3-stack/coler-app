@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue_pump">#2196F3</color>
+    <color name="yellow_slow">#FBC02D</color>
+    <color name="orange_fast">#F57C00</color>
+    <color name="purple_mode">#7E57C2</color>
+    <color name="background">#F4F7FB</color>
+    <color name="text_primary">#172033</color>
+</resources>
